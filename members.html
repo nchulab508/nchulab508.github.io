@@ -89,6 +89,6 @@
   </section>
 </main>
 
-<footer><div class="container footer-inner"><span>© <span id="year"></span> [實驗室名稱]. All rights reserved.</span><span>建議以 GitHub Pages 發布與維護</span></div></footer>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Soil Lab 508. All rights reserved.</span><span>以 GitHub Pages 發布與維護</span></div></footer>
 <script>const button=document.querySelector('.menu-toggle'),menu=document.querySelector('.menu'),dropdowns=document.querySelectorAll('.nav-dropdown');button.addEventListener('click',()=>{const open=menu.classList.toggle('open');button.setAttribute('aria-expanded',open);button.textContent=open?'✕ 關閉':'☰ 選單'});document.querySelectorAll('.dropdown-toggle').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();const parent=b.closest('.nav-dropdown'),willOpen=!parent.classList.contains('open');dropdowns.forEach(item=>{item.classList.remove('open');item.querySelector('.dropdown-toggle').setAttribute('aria-expanded','false')});if(willOpen){parent.classList.add('open');b.setAttribute('aria-expanded','true')}}));document.querySelectorAll('.menu a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');button.setAttribute('aria-expanded','false');button.textContent='☰ 選單'}));document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body></html>
