@@ -1,10 +1,10 @@
 <!doctype html>
-<!-- 實驗室網站：成果發表 - 期刊論文 -->
+<!-- 實驗室網站：成果發表 - 期刊論文 / 研討會發表 -->
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="土肥研究室｜成果發表與近年代表期刊著作">
+  <meta name="description" content="土肥研究室｜成果發表：期刊論文與研討會發表">
   <title>成果發表｜Lab 508 Laboratory Website</title>
   <style>
     :root { --ink:#18352f; --muted:#5d6d68; --green:#18735c; --deep-green:#0e4e40; --mint:#eaf5f0; --paper:#fcfdfc; --line:#d8e5df; }
@@ -47,6 +47,8 @@
     .kicker { color:var(--green); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
     h2 { margin:4px 0 9px; font-size:clamp(1.7rem,3vw,2.35rem); line-height:1.3; }
     .section-heading p { margin:0; color:var(--muted); }
+
+    /* ---------- 期刊論文 ---------- */
     .publication-list { border-top:1px solid var(--line); }
     .publication { display:grid; grid-template-columns:92px 1fr; gap:25px; padding:24px 0; border-bottom:1px solid var(--line); }
     .publication-year { color:var(--green); font-weight:800; font-size:1.05rem; }
@@ -55,6 +57,28 @@
     .author-kaiwei { font-weight:800; }
     .tag { display:inline-block; margin-top:9px; padding:3px 10px; background:var(--mint); color:var(--deep-green); border-radius:20px; font-size:.76rem; font-weight:700; }
     .tag-domestic { background:#eef0ef; color:#52635e; }
+
+    /* ---------- 研討會發表 ---------- */
+    .conference-group + .conference-group { margin-top:34px; }
+    .group-title { display:flex; align-items:center; gap:10px; margin:0 0 6px; padding-bottom:10px; color:var(--deep-green); border-bottom:2px solid var(--green); font-size:1.1rem; }
+    .group-meta { margin:0 0 4px; color:var(--muted); font-size:.9rem; }
+
+    .conference-list { border-top:1px solid var(--line); }
+    .conference-item { display:grid; grid-template-columns:92px 1fr; gap:25px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .conference-year { color:var(--green); font-weight:800; font-size:1.02rem; }
+    .poster-link {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:var(--deep-green);
+      font-weight:700;
+      text-decoration:underline;
+      text-decoration-color:var(--mint);
+      text-underline-offset:3px;
+    }
+    .poster-link:hover,.poster-link:focus { color:var(--green); }
+    .poster-link::after { content:"↗"; font-size:.85em; }
+    .conference-authors { margin:6px 0 0; color:var(--muted); font-size:.92rem; }
 
     /* ---------- Footer ---------- */
     footer { padding:30px 0; background:#102f28; color:#c8ded6; font-size:.88rem; }
@@ -72,7 +96,7 @@
       .dropdown-menu { display:none; position:static; grid-column:1 / -1; min-width:0; margin:0 0 8px; padding:4px; box-shadow:none; border:0; border-left:2px solid var(--mint); border-radius:0; }
       .nav-dropdown:hover .dropdown-menu { display:none; }
       .nav-dropdown.open .dropdown-menu { display:block; }
-      .publication { grid-template-columns:1fr; gap:4px; }
+      .publication,.conference-item { grid-template-columns:1fr; gap:4px; }
       .footer-inner { flex-direction:column; }
     }
   </style>
@@ -87,7 +111,7 @@
         <a href="index.html">首頁</a>
         <div class="nav-dropdown"><a class="dropdown-link" href="research.html">研究領域</a><button class="dropdown-toggle" type="button" aria-label="展開研究領域選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="research.html">研究領域</a><a href="methods.html">研究方法</a><a href="equipment.html">儀器設備</a></div></div>
         <div class="nav-dropdown"><a class="dropdown-link" href="projects.html">專案計畫</a><button class="dropdown-toggle" type="button" aria-label="展開專案計畫選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="projects.html#ongoing">執行中計畫</a><a href="projects.html#completed">已結案計畫</a></div></div>
-        <div class="nav-dropdown"><a class="dropdown-link" href="publications.html" aria-current="page">成果發表</a><button class="dropdown-toggle" type="button" aria-label="展開成果發表選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="publications.html#journal" aria-current="page">期刊論文</a><a href="publications.html#conference">研討會發表</a><a href="publications.html#thesis">學位論文</a></div></div>
+        <div class="nav-dropdown"><a class="dropdown-link" href="publications.html" aria-current="page">成果發表</a><button class="dropdown-toggle" type="button" aria-label="展開成果發表選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="publications.html#journal">期刊論文</a><a href="publications.html#conference" aria-current="page">研討會發表</a><a href="publications.html#thesis">學位論文</a></div></div>
         <div class="nav-dropdown"><a class="dropdown-link" href="people.html">團隊成員</a><button class="dropdown-toggle" type="button" aria-label="展開團隊成員選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="pi.html">主持人</a><a href="members.html">現任成員</a><a href="alumni.html">歷屆畢業生</a></div></div>
         <div class="nav-dropdown"><a class="dropdown-link" href="courses.html">研究法專區</a><button class="dropdown-toggle" type="button" aria-label="展開研究法專區選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="courses.html">課程資訊</a><a href="course-regulations.html">課程規範</a><a href="studentpub.html">成果發表</a><a href="interviews.html">修課面談報名</a></div></div>
         <div class="nav-dropdown"><a class="dropdown-link" href="life-notes.html">實驗室生活</a><button class="dropdown-toggle" type="button" aria-label="展開實驗室生活選單" aria-expanded="false">▾</button><div class="dropdown-menu"><a href="notes.html">生活筆記</a><a href="food-map.html">美食地圖</a></div></div>
@@ -97,11 +121,11 @@
   </header>
 
   <main id="main">
-    <section class="page-hero"><div class="container"><span class="eyebrow">PUBLICATIONS</span><h1>成果發表</h1><p>收錄本研究室近年代表性期刊著作，涵蓋土壤有機碳、農地污染、重金屬風險、作物生長與土壤管理等研究主題。</p></div></section>
+    <section class="page-hero"><div class="container"><span class="eyebrow">PUBLICATIONS</span><h1>成果發表</h1><p>收錄本研究室近年代表性期刊著作與研討會發表，涵蓋土壤有機碳、農地污染、土壤塑膠微粒、重金屬風險與作物碳匯管理等研究主題。</p></div></section>
 
     <section id="journal">
       <div class="container">
-        <div class="section-heading"><div class="kicker">Journal Publications</div><h2>近年代表著作</h2><p><span class="author-kaiwei">Kai-Wei Juang／莊愷瑋</span>以粗體標示；通訊作者以星號（*）標示；依發表年份由新至舊排列。</p></div>
+        <div class="section-heading"><div class="kicker">Journal Publications</div><h2>近年代表著作</h2><p>通訊作者以星號標示（*）。</p></div>
         <div class="publication-list">
           <article class="publication"><div class="publication-year">2025</div><div><p class="citation">Han-Ting Hsu, Yu-Chan Sie, Ting Tsai, <span class="author-kaiwei">Kai-Wei Juang</span>* (2025, Apr). Exact variances associated with unbiased estimation for the assessment of soil organic carbon storage in the coffee-growing region of Taiwan. <em>Soil Use and Management</em>, 41(2), e70076.</p><span class="tag">SCI</span></div></article>
           <article class="publication"><div class="publication-year">2024</div><div><p class="citation">Chin-Jin Hou, Yung-Hsiang Lu, Yu-Chien Tseng, Yuan-Ching Tsai, Wen-Lii Huang, <span class="author-kaiwei">Kai-Wei Juang</span>* (2024, Jun). Using a comprehensive model for cropland types in relationships between soil bulk density and organic carbon to predict site-specific carbon stocks. <em>Journal of Soils and Sediments</em>, 24, 2584–2598.</p><span class="tag">SCI</span></div></article>
@@ -121,7 +145,100 @@
       </div>
     </section>
 
-    <section id="conference"><div class="container"><div class="section-heading"><div class="kicker">Conference Presentations</div><h2>研討會發表</h2><p>研討會發表資料將陸續更新。</p></div></div></section>
+    <section id="conference">
+      <div class="container">
+        <div class="section-heading">
+          <div class="kicker">Conference Presentations</div>
+          <h2>研討會發表</h2>
+          <p>通訊作者以星號標示（*）。</p>
+        </div>
+
+        <div class="conference-group">
+          <h3 class="group-title">2026 The 23rd World Congress of Soil Science</h3>
+          <p class="group-meta">Nanjing, China｜Soil and the Shared Future for Humanity</p>
+          <div class="conference-list">
+            <article class="conference-item">
+              <div class="conference-year">2026</div>
+              <div>
+                <a class="poster-link" href="posters/2026-wcss-soil-microplastics-flotation-sieving.pdf" target="_blank" rel="noopener">Assessment of the reliability to extract soil microplastics by a flotation sieving method</a>
+                <p class="conference-authors">Yen-Cheng Chen, Yi-Jie Liao, Chien-Hui Syu, <span class="author-kaiwei">Kai-Wei Juang</span>*</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="conference-group">
+          <h3 class="group-title">2026 台灣農藝學會年會</h3>
+          <p class="group-meta">國立臺灣大學｜台北市，臺灣</p>
+          <div class="conference-list">
+            <article class="conference-item">
+              <div class="conference-year">115 年度</div>
+              <div>
+                <a class="poster-link" href="posters/115-water-paddy-n2o.pdf" target="_blank" rel="noopener">水田施用裹覆型肥料對土壤氧化亞氮排放與氮肥利用率之影響</a>
+                <p class="conference-authors">蔡婷、許翰庭、<span class="author-kaiwei">莊愷瑋</span></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="conference-group">
+          <h3 class="group-title">2025 台灣農藝學會年會</h3>
+          <p class="group-meta">國立中興大學｜台中市，臺灣</p>
+          <div class="conference-list">
+            <article class="conference-item">
+              <div class="conference-year">114 年度</div>
+              <div>
+                <a class="poster-link" href="posters/114-carbon-risk-farmland.pdf" target="_blank" rel="noopener">農地土壤有機碳儲量的風險評估</a>
+                <p class="conference-authors">許翰庭*、蔡婷、陳勝瑋、劉芷婷、<span class="author-kaiwei">莊愷瑋</span>**</p>
+              </div>
+            </article>
+            <article class="conference-item">
+              <div class="conference-year">114 年度</div>
+              <div>
+                <a class="poster-link" href="posters/114-paddy-soc-baseline.pdf" target="_blank" rel="noopener">水田土壤有機碳庫的標準化基線估算與不確定性</a>
+                <p class="conference-authors">許奕婷、<span class="author-kaiwei">莊愷瑋</span>*</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="conference-group">
+          <h3 class="group-title">2025 Eurosoil</h3>
+          <p class="group-meta">西班牙</p>
+          <div class="conference-list">
+            <article class="conference-item">
+              <div class="conference-year">2025</div>
+              <div>
+                <a class="poster-link" href="posters/2025-eurosoil-soc-bd-paddy.pdf" target="_blank" rel="noopener">Dynamical modeling with co-variation between soil organic carbon (SOC) and bulk density for SOC baseline delineation in paddy fields</a>
+                <p class="conference-authors">Han-Ting Hsu*, <span class="author-kaiwei">Kai-Wei Juang</span>, Yi-Ting Hsu</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="conference-group">
+          <h3 class="group-title">2024 台灣農藝學會年會</h3>
+          <p class="group-meta">國立嘉義大學｜嘉義市，臺灣</p>
+          <div class="conference-list">
+            <article class="conference-item">
+              <div class="conference-year">113年度</div>
+              <div>
+                <a class="poster-link" href="posters/113-coffee-bd-oc-carbon-stock.pdf" target="_blank" rel="noopener">咖啡園土壤總體密度與有機碳關聯性對估算碳儲量變化的影響</a>
+                <p class="conference-authors">許翰庭、楊博鈞、傅建銘、謝于禪、<span class="author-kaiwei">莊愷瑋</span>**</p>
+              </div>
+            </article>
+            <article class="conference-item">
+              <div class="conference-year">113年度</div>
+              <div>
+                <a class="poster-link" href="posters/113-tea-bd-oc-carbon-stock.pdf" target="_blank" rel="noopener">考慮總體密度與有機碳之關係模式估算茶園土壤碳儲量</a>
+                <p class="conference-authors">楊博鈞*、許翰庭、傅建銘、謝于禪、<span class="author-kaiwei">莊愷瑋</span>**</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="thesis"><div class="container"><div class="section-heading"><div class="kicker">Theses</div><h2>學位論文</h2><p>學位論文資料將陸續更新。</p></div></div></section>
   </main>
 
