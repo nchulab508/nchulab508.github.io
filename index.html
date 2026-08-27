@@ -200,7 +200,20 @@
     .hero-content {
       max-width: 760px;
     }
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
 
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid rgba(255, 255, 255, .35);
+}
     .eyebrow {
       display: inline-block;
       margin-bottom: 15px;
@@ -537,7 +550,16 @@
       .hero {
         padding: 82px 0 70px;
       }
+.hero-flex {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
 
+.hero-logo {
+  width: 96px;
+  height: 96px;
+}
       section {
         padding: 58px 0;
       }
@@ -641,14 +663,17 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-content">
-        <span class="eyebrow">ENVIRONMENTAL SCIENCE · TAIWAN</span>
-        <h1>土壤健康與作物生產研究室</h1>
-        <p>Lab of Soil Health and Crop Production</p>
-        <a class="button button-primary" href="research.html">認識研究方向</a>
-      </div>
-    </section>
+<section class="hero">
+  <div class="container hero-flex">
+    <img class="hero-logo" src="assets/images/logo.png" alt="土肥健康實驗室 Logo">
+    <div class="hero-content">
+      <span class="eyebrow">ENVIRONMENTAL SCIENCE · TAIWAN</span>
+      <h1>土壤健康與作物生產研究室</h1>
+      <p>Lab of Soil Health and Crop Production</p>
+      <a class="button button-primary" href="research.html">認識研究方向</a>
+    </div>
+  </div>
+</section>
 
     <!-- 最新公告：固定顯示最新 3 則，其餘舊公告可展開／收合 -->
     <section id="announcements">
@@ -814,10 +839,10 @@
       <span>© <span id="year"></span> Soil Lab 508. All rights reserved.</span>
       <span>以 GitHub Pages 發布與維護</span>
       <span class="visitor-badge">
-      <img src="https://hits.sh/nchulab508.github.io.svg?style=flat&label=歷史瀏覽人次&color=18735c" alt="歷史瀏覽人次">
+      <img src="https://hits.sh/nchulab508.github.io.svg?style=flat&label=瀏覽人數&color=18735c" alt="瀏覽人數">
     </span>
-       <script id="_wautk2">var _wau = _wau || []; _wau.push(["dynamic", "11ks7el7y8", "tk2", "00472effffff", "small"]);</script>
-  <script async src="//waust.at/d.js"></script>
+    <script id="_wautk2">var _wau = _wau || []; _wau.push(["dynamic", "11ks7el7y8", "tk2", "00472effffff", "small"]);</script>
+    <script async src="//waust.at/d.js"></script>
 </span>
     </div>
   </footer>
